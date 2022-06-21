@@ -1,9 +1,8 @@
 # React练习及笔记内容
 
-根据官方笔记和B站上的教学视频编写的
+根据官方笔记和B站上的尚硅谷React教学视频编写的
 
-
-https://www.bilibili.com/video/BV1wy4y1D7JT?spm_id_from=333.337.search-card.all.click&vd_source=1accccbf65ef01b231cfa311e00517ea
+[尚硅谷React教程](https://www.bilibili.com/video/BV1wy4y1D7JT?spm_id_from=333.337.search-card.all.click&vd_source=1accccbf65ef01b231cfa311e00517ea)
 
 ## 1- Hello,React
 
