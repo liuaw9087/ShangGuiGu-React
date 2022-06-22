@@ -17,42 +17,37 @@
         <script type="text/babel">
             // 1.创建组件
             class Weather extends React.Component{
-
-
-                constructor(props){
-                    super(props)
-                    this.state = {isHot:false,wind:'微风'}
-                    this.changeWheather = this.changeWheather.bind(this)
-                }
-
+                // 初始化状态
+                state = {isHot:false,wind:'微风'}
 
                 render(){
 
                     const {isHot,wind} = this.state
                     return <h1 onClick={this.changeWheather}>今天天气{isHot ? '炎热':'凉爽'},{wind}</h1>
                 }
-
-
-                changeWheather(){
+                // 自定义方法——要用赋值语句的形式+箭头函数
+                changeWheather = ()=>{
                 const isHot = this.state.isHot
-
-
-
                 this.setState({
                     isHot:!isHot
                 })
             }
-                demo1(){
-
-                }
-                demo2(){
-
-                }
-            }
+        }
 
             ReactDOM.render(<Weather/>,document.getElementById('test'))
 
-            
+            /* 
+                总结：
+                    1.state是组件的重要组成部分，state是值，主要形式是对象 key：value的形式
+                    2.组件被称为"状态机"，通过更新组件的state来更新对应的页面显示（重新渲染组件）
+
+                强烈注意：
+                    1.组件中render方法中的this为组件的实例对象
+                    2.组件自定义方法中的this为undefined，如何解决？
+                        a.强制绑定this
+                        b.箭头函数
+                    3.状态数据，不能直接修改或更新
+            */
         </script>
 </body>
 </html>
