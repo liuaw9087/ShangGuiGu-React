@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind的演示操作</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function demo(){
+            console.log(this)
+        }
+        demo()
+        const x =   demo.bind({a:1,b:2})
+        x()
+    </script>
+</body>
+</html>
