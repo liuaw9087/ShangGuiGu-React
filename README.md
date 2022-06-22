@@ -1,6 +1,6 @@
-# React练习及笔记内容
+# 👋 ⚛️React练习及笔记内容
 
-根据官方笔记和B站上的尚硅谷React教学视频编写的
+根据官方笔记和B站上的尚硅谷React教学视频编写的备忘文档
 
 [尚硅谷React教程](https://www.bilibili.com/video/BV1wy4y1D7JT?spm_id_from=333.337.search-card.all.click&vd_source=1accccbf65ef01b231cfa311e00517ea)
 
@@ -31,7 +31,7 @@
 
 ## 2-虚拟DOM的两种创建方式
 
-​	可以通过javascript和JSX两种方式创建虚拟DOM
+​	可以通过Javascript和JSX两种方式创建虚拟DOM
 
 ​	使用JSX创建虚拟DOM
 
