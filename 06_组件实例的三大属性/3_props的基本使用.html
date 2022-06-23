@@ -19,14 +19,16 @@
         // 创建组件
         class Person extends React.Component {
             state = {name:'tom',age:18,sex:'女'}
-    
+            
             render(){
+                // 如果觉得每次都需要 this.props来调用值的话，可以利用解构赋值的方式 如下
+                const {name,age,sex} = this.props; //解构赋值
                 console.log(this)
                 return (
                     <ul>
-                        <li>姓名：{this.props.name}</li>
-                        <li>性别：{this.props.sex}</li> 
-                        <li>年龄：{this.props.age}</li> 
+                        <li>姓名：{name}</li>
+                        <li>性别：{sex}</li> 
+                        <li>年龄：{age}</li> 
                     </ul>
                 )
             }
