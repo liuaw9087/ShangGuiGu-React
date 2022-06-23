@@ -4,7 +4,7 @@
 
 [尚硅谷React教程](https://www.bilibili.com/video/BV1wy4y1D7JT?spm_id_from=333.337.search-card.all.click&vd_source=1accccbf65ef01b231cfa311e00517ea)
 
-[点击链接加入群聊【前端学习-求职】](https://jq.qq.com/?_wv=1027&k=aP4rxRLD)
+我建立了一个前端交流群，欢迎加入！[点击链接加入群聊【前端学习-求职】](https://jq.qq.com/?_wv=1027&k=aP4rxRLD)
 
 ## 1 - Hello,React
 
