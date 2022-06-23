@@ -195,7 +195,7 @@ class Student extends Person{
 
 ### 原生事件绑定方式
 
-原生世界绑定的三种方式
+原生事件绑定的三种方式
 
 ```javascript
 <script type="text/javascript">
