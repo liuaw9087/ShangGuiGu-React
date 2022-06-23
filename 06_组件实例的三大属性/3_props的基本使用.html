@@ -6,8 +6,9 @@
 </head>
 <body>
     <!-- 准备好一个容器  -->
-    <div id="test"></div>
-
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
     <!-- 引入react核心库 -->
     <script type="text/javascript" src="../js/react.development.js"></script>
     <!-- 引入react-dom，用于支持react操作DOM -->
@@ -18,18 +19,22 @@
         // 创建组件
         class Person extends React.Component {
             state = {name:'tom',age:18,sex:'女'}
+    
             render(){
+                console.log(this)
                 return (
                     <ul>
-                        <li>姓名：{this.state.name}</li>
-                        <li>性别：{this.state.sex}</li> 
-                        <li>年龄：{this.state.age}</li> 
+                        <li>姓名：{this.props.name}</li>
+                        <li>性别：{this.props.sex}</li> 
+                        <li>年龄：{this.props.age}</li> 
                     </ul>
                 )
             }
         }
         // 渲染组件到页面
-        ReactDOM.render(<Person/>,document.getElementById('test'))
+        ReactDOM.render(<Person name="xifulaizi" sex="男" age="22"/>,document.getElementById('test1'))
+        ReactDOM.render(<Person name="tom" sex="男" age="23"/>,document.getElementById('test2'))
+        ReactDOM.render(<Person name="lisa" sex="女" age="18"/>,document.getElementById('test3'))
     </script>
 </body>
 </html>
