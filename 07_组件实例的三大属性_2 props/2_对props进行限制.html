@@ -29,9 +29,10 @@
         render() {
           // 如果觉得每次都需要 this.props来调用值的话，可以利用解构赋值的方式 如下
           const { name, age, sex } = this.props; //解构赋值
-        //   props是只读的
+        
           // console.log(this)
           return (
+            //   props是只读的
             <ul>
               <li>姓名：{name}</li>
               <li>性别：{sex}</li>
