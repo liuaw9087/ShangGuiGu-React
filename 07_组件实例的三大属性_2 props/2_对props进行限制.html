@@ -40,10 +40,10 @@
         }
       }
       Person.propTypes = {
-        name: React.PropTypes.string,
+        name: PropTypes.string.isRequired,
       };
       // 渲染组件到页面
-      const p = { name: "老刘", age: 18, sex: "男" };
+      const p = { name: 212, age: 18, sex: "男" };
       // 展开运算发仅用于props属性的展开
       ReactDOM.render(<Person {...p} />, document.getElementById("test1"));
       // ReatDOM.render(<Person name={p.name} age ={p.age}  sex={p.sex}/>,document.getElementById('test1'))    )
