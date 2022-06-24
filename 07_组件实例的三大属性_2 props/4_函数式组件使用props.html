@@ -23,51 +23,77 @@
 
     <script type="text/babel">
       // 创建组件
-      class Person extends React.Component {
-        constructor(props) {
-          // constructor是否接收props，是否传递给super，取决于：是否希望在构造器中通过this访问props
-          // console.log(props);
-          super(props);
-          console.log("constructor", props);
-        }
+      //   class Person extends React.Component {
+      //     constructor(props) {
+      //       // constructor是否接收props，是否传递给super，取决于：是否希望在构造器中通过this访问props
+      //       // console.log(props);
+      //       super(props);
+      //       console.log("constructor", props);
+      //     }
 
-        //   props验证注意大小写
-        // 对标签属性进行类型、必要性的限制
-        static propTypes = {
-          // string 类型为string类型 required意为必须写
-          name: PropTypes.string.isRequired, //限制name必传，且为字符串
-          sex: PropTypes.string, // 限制sex为字符串
-          age: PropTypes.number, // 限制age为number类型
-          /* 
-            Failed prop type: Invalid prop `speak` of type `string` supplied to `Person`, expected `function`.
-    at Person (<anonymous>:16:5)
-        */
-        };
+      //     //   props验证注意大小写
+      //     // 对标签属性进行类型、必要性的限制
+      //     static propTypes = {
+      //       // string 类型为string类型 required意为必须写
+      //       name: PropTypes.string.isRequired, //限制name必传，且为字符串
+      //       sex: PropTypes.string, // 限制sex为字符串
+      //       age: PropTypes.number, // 限制age为number类型
+      //       /*
+      //         Failed prop type: Invalid prop `speak` of type `string` supplied to `Person`, expected `function`.
+      // at Person (<anonymous>:16:5)
+      //     */
+      //     };
 
-        //   指定默认标签属性值
-        static defaultProps = {
-          sex: "男", // 性别默认值为男
-          age: 18, // 年龄默认值为18
-        };
+      //     //   指定默认标签属性值
+      //     static defaultProps = {
+      //       sex: "男", // 性别默认值为男
+      //       age: 18, // 年龄默认值为18
+      //     };
 
-        render() {
-          // 如果觉得每次都需要 this.props来调用值的话，可以利用解构赋值的方式 如下
-          const { name, age, sex } = this.props; //解构赋值
+      //     render() {
+      //       // 如果觉得每次都需要 this.props来调用值的话，可以利用解构赋值的方式 如下
+      //       const { name, age, sex } = this.props; //解构赋值
 
-          // console.log(this)
-          return (
-            //   props是只读的
-            <ul>
-              <li>姓名：{name}</li>
-              <li>性别：{sex}</li>
-              <li>年龄：{age + 1}</li>
-            </ul>
-          );
-        }
+      //       // console.log(this)
+      //       return (
+      //         //   props是只读的
+      //         <ul>
+      //           <li>姓名：{name}</li>
+      //           <li>性别：{sex}</li>
+      //           <li>年龄：{age + 1}</li>
+      //         </ul>
+      //       );
+      //     }
+      //   }
+      //
+      function Person(props) {
+        const { name, age, sex } = props;
+        return (
+          <ul>
+            <li>姓名：{name}</li>
+            <li>性别：{sex}</li>
+            <li>年龄：{age + 1}</li>
+          </ul>
+        );
       }
+      Person.propTypes = {
+        // string 类型为string类型 required意为必须写
+        name: PropTypes.string.isRequired, //限制name必传，且为字符串
+        sex: PropTypes.string, // 限制sex为字符串
+        age: PropTypes.number, // 限制age为number类型
+        /*
+              Failed prop type: Invalid prop `speak` of type `string` supplied to `Person`, expected `function`.
+      at Person (<anonymous>:16:5)
+          */
+      };
 
+      //   指定默认标签属性值
+      Person.defaultProps = {
+        sex: "男", // 性别默认值为男
+        age: 18, // 年龄默认值为18
+      };
       ReactDOM.render(
-        <Person name="jerry" />,
+        <Person name="jerry" sex="男" age={18} />,
         document.getElementById("test1")
       );
     </script>
