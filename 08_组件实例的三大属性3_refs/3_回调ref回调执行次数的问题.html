@@ -25,25 +25,41 @@
           const { input1 } = this;
           alert(input1.value);
         };
+        changeWheather = () => {
+          const { isHot } = this.state;
+          // 更新状态
+          this.setState({ isHot: !isHot });
+        };
+        saveInput = (c) => {
+          this.input1 = c;
+          console.log("@", c);
+        };
         render() {
           const { isHot } = this.state;
           return (
             <div>
               <h2>今天天气很{isHot ? "炎热" : "凉爽"}</h2>
-              <input
+              {/* <input
                 type="text"
                 ref={(currentNode) => {
                   this.input1 = currentNode;
                   console.log("@", currentNode);
                 }}
-              />
+              /> */}
+              <br />
+              <input ref={this.saveInput} type="text" />
               <button onClick={this.showInfo}>点我提示输入的数据</button>
+
+              <button onClick={this.changeWheather}>点我切换天气</button>
             </div>
           );
         }
       }
       //   渲染组件到页面
       ReactDOM.render(<Demo />, document.getElementById("test"));
+      /* 
+        总结：如何避免多次执行回调函数？ -- 将内敛形式的回调函数改为class绑定类型（也就是外联形式），但是大多数形式无关紧要，内联外联没有特别说明可以写内联形式
+      */
     </script>
   </body>
 </html>
