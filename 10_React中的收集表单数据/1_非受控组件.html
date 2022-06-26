@@ -20,13 +20,29 @@
     <script type="text/babel">
       // 创建组件
       class Login extends React.Component {
+        handleSubmit = (event) => {
+          //   console.log(this);
+          evnet.preventDefault(); // 阻止表单提交
+          const { username, password } = this;
+          alert(
+            `你输入的用户名是：${username.value},你输入的密码是：${password.value}`
+          );
+        };
         render() {
           return (
-            <form action="http://www.atguigu.com">
+            <form onSubmit={this.handleSubmit}>
               用户名：
-              <input type="text" />
+              <input
+                ref={(c) => (this.username = c)}
+                type="text"
+                name="username"
+              />
               密码：
-              <input type="password" />
+              <input
+                ref={(c) => (this.password = c)}
+                type="password"
+                name="password"
+              />
               <button>登录</button>
             </form>
           );
