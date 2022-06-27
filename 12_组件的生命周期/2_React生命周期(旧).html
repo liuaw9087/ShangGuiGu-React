@@ -22,7 +22,7 @@
       class Count extends React.Component {
         // 构造器
         constructor(props) {
-          console.log("constructor");
+          console.log("Count---constructor");
           super(props);
           // 初始化状态
           this.state = { count: 0 };
@@ -33,20 +33,41 @@
           const { count } = this.state;
           this.setState({ count: count + 1 });
         };
+        death = () => {
+          ReactDOM.unmountComponentAtNode(document.getElementById("test"));
+        };
         // 组件将要挂载的钩子
         componentWillMount() {
-          console.log("componentWillMount");
+          console.log("Count---componentWillMount");
         }
         // 组件挂载完毕的钩子
         componentDidMount() {
-          console.log("componentDidMount");
+          console.log("Count---componentDidMount");
+        }
+        // 控制组件更新的阀门
+        shouldComponentUpdate() {
+          console.log("Count---shouldComponentUpdate");
+          return true;
+        }
+        // 组件将要更新的钩子
+        componentWillUpdate() {
+          console.log("count---componentWillUpdate");
+        }
+        // 组件更新完毕的钩子
+        componentDidUpdate() {
+          console.log("count---componentDidUpdate");
+        }
+        // 组件将要挂载的钩子
+        componentWillUnmount() {
+          console.log("Count---componentWillUnmount");
         }
         render() {
-          console.log("render");
+          console.log("Count---render");
           return (
             <div>
               <h2>当前求和为:{this.state.count}</h2>
               <button onClick={this.add}>点我+1</button>
+              <button onClick={this.death}>卸载组件</button>
             </div>
           );
         }
