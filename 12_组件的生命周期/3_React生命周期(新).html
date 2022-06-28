@@ -43,26 +43,32 @@
         force = () => {
           this.forceUpdate();
         };
-        // 组件将要挂载的钩子
-        UNSAFE_componentWillMount() {
-          console.log("Count---componentWillMount");
+        // 若state的值任何时候都取决于props，那么可以使用getDerivedStateFromPorps
+        static getDerivedStateFromProps(props, state) {
+          console.log("getDerivedStateFromProps", props, state);
+          return null;
+        }
+        getSnapshotBeforeUpdate() {
+          console.log("getSnapshotBeforeUpdate");
+          return "atguigu";
         }
         // 组件挂载完毕的钩子
         componentDidMount() {
           console.log("Count---componentDidMount");
+          return true;
         }
         // 控制组件更新的阀门
         shouldComponentUpdate() {
           console.log("Count---shouldComponentUpdate");
           return true;
         }
-        // 组件将要更新的钩子
-        UNSAFE_componentWillUpdate() {
-          console.log("count---componentWillUpdate");
-        }
-        // 组件更新完毕的钩子
-        UNSAFE_componentDidUpdate() {
-          console.log("count---componentDidUpdate");
+        componentDidUpdate(preProps, preState, snapShotValue) {
+          console.log(
+            "Count---componentDidUpdate",
+            preProps,
+            preState,
+            snapShotValue
+          );
         }
         // 组件将要挂载的钩子
         componentWillUnmount() {
@@ -111,7 +117,7 @@
       }
 
       //   渲染组件
-      ReactDOM.render(<Count />, document.getElementById("test"));
+      ReactDOM.render(<Count count="199" />, document.getElementById("test"));
     </script>
   </body>
 </html>
