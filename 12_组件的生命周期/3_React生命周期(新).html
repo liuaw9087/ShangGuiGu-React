@@ -9,14 +9,17 @@
     <div id="test"></div>
 
     <!-- 引入react核心库 -->
-    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script
+      type="text/javascript"
+      src="../js/17.0.1/react.development.js"
+    ></script>
     <!-- 引入react-dom，用于支持react操作DOM -->
     <script
       type="text/javascript"
-      src="../js/react-dom.development.js"
+      src="../js/17.0.1/react-dom.development.js"
     ></script>
     <!-- 引入babel，用于将jsx转为js -->
-    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/javascript" src="../js/17.0.1/babel.min.js"></script>
     <script type="text/babel">
       // 创建组件
       class Count extends React.Component {
@@ -41,7 +44,7 @@
           this.forceUpdate();
         };
         // 组件将要挂载的钩子
-        componentWillMount() {
+        UNSAFE_componentWillMount() {
           console.log("Count---componentWillMount");
         }
         // 组件挂载完毕的钩子
@@ -54,11 +57,11 @@
           return true;
         }
         // 组件将要更新的钩子
-        componentWillUpdate() {
+        UNSAFE_componentWillUpdate() {
           console.log("count---componentWillUpdate");
         }
         // 组件更新完毕的钩子
-        componentDidUpdate() {
+        UNSAFE_componentDidUpdate() {
           console.log("count---componentDidUpdate");
         }
         // 组件将要挂载的钩子
@@ -98,23 +101,12 @@
       }
       //   子组件B
       class B extends React.Component {
-        // 组件将要接收新的props的钩子
-        componentDidMount() {
-          console.log("B---componentDidMount");
-        }
-        componentWillReceiveProps(props) {
+        UNSAFE_componentWillReceiveProps(props) {
           console.log("B---componentWillReceiveProps", props);
-        }
-        shouldComponentUpdate() {
-          console.log("B---shouldComponentUpdate");
-          return true;
         }
         render() {
           console.log("B---render");
           return <div>我是B组件，接收到的车是{this.props.carName}</div>;
-        }
-        componentDidUpdate() {
-          console.log("B---componentDidUpdate");
         }
       }
 
