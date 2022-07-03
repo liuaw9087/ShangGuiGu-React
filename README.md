@@ -12,7 +12,7 @@
 
 ## 1 - Hello,React
 
-​ React 通过修改虚拟 DOM 的内容来向页面呈现内容。
+ React 通过修改虚拟 DOM 的内容来向页面呈现内容。
 
 ```jsx
 <body>
@@ -37,9 +37,9 @@
 
 ## 2 - 虚拟 DOM 的两种创建方式
 
-​ 可以通过 Javascript 和 JSX 两种方式创建虚拟 DOM
+ 可以通过 Javascript 和 JSX 两种方式创建虚拟 DOM
 
-​ 使用 JSX 创建虚拟 DOM
+ 使用 JSX 创建虚拟 DOM
 
 ```jsx
 <script type="text/babel">
@@ -50,7 +50,7 @@
 </script>
 ```
 
-​ 使用 Javascript 创建虚拟 DOM
+ 使用 Javascript 创建虚拟 DOM
 
 ```javascript
 <script type="text/javascript" >
@@ -65,92 +65,92 @@
 
 关于虚拟 DOM：
 
-​ 1、本质是 Object 类型的对象
+ 1、本质是 Object 类型的对象
 
-​ 2、虚拟 DOM 比较轻 ，真实 DOM 比较重，因为虚拟 DOM 是 React 内部在用，无需真实 DOM 上那么多的属性
+ 2、虚拟 DOM 比较轻 ，真实 DOM 比较重，因为虚拟 DOM 是 React 内部在用，无需真实 DOM 上那么多的属性
 
-​ 3、虚拟 DOM 最终会被 React 转化为真实 DOM，呈现在页面上。
+ 3、虚拟 DOM 最终会被 React 转化为真实 DOM，呈现在页面上。
 
 ## 3 - JSX 语法规则
 
 jsx 语法规则：
 
-​ 1.定义虚拟 DOM 时 不要写引号。
+ 1.定义虚拟 DOM 时 不要写引号。
 
 ```jsx
 const VDOM = (....)
 ```
 
-​ 2.标签中混入 js 表达式时，要用花括号
+ 2.标签中混入 js 表达式时，要用花括号
 
 ```jsx
 <div><h2 className="title" id="{myId.toLowerCase()}"> //id中的表达式显示的是花括号才可以
 ```
 
-​ 3.样式的类名指令不要用 class ，要用 className 例如：
+ 3.样式的类名指令不要用 class ，要用 className 例如：
 
 ```jsx
 <div><h2 className="title" id="{myId.toLowerCase()}">
 ```
 
-​ 4.内联样式要用 style={{key:value}}的形式去写，采用小驼峰命名法 例如：
+ 4.内联样式要用 style={{key:value}}的形式去写，采用小驼峰命名法 例如：
 
 ```jsx
 <span style={{ color: "white", fontSize: "29px" }}>{myData.toLowerCase()}</span>
 ```
 
-​ 5.虚拟 DOM 必须只有一个跟标签
+ 5.虚拟 DOM 必须只有一个跟标签
 
 ```jsx
 const VDOM = <div>...</div>; //例如 图中只有一个div根节点
 ```
 
-​ 6.标签必须闭合 闭合或者自闭合
+ 6.标签必须闭合 闭合或者自闭合
 
 ```jsx
 <input type="text"></input>
 <input type="text"/>
 ```
 
-​ 7.标签首字母
+ 7.标签首字母
 
-​ (1).若小写字母开头，则将该标签转为 Html 中同名元素。若 html 中无该标签对应的同名元素，则报错
+ (1).若小写字母开头，则将该标签转为 Html 中同名元素。若 html 中无该标签对应的同名元素，则报错
 
 ```jsx
 <good><good/> //例如如果是good标签，则会在html中找同名元素，所以会报错
 ```
 
-​ (2).若大写字母开头，React 就去渲染对应的组件，若组件没有定义，则报错 （之后组件内容会涉及）
+ (2).若大写字母开头，React 就去渲染对应的组件，若组件没有定义，则报错 （之后组件内容会涉及）
 
 一定注意区分：【js 语句()】与【js 表达式】
 
-​ 3.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方
+ 3.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方
 
-​ 例如：
+ 例如：
 
-​ (1).a
+ (1).a
 
-​ (2).a + b
+ (2).a + b
 
-​ (3).demo(1)
+ (3).demo(1)
 
-​ (4).arr.map()
+ (4).arr.map()
 
-​ (5).function test(){}
+ (5).function test(){}
 
-​ 4.语句（代码）:改变程序走向的代码行
+ 4.语句（代码）:改变程序走向的代码行
 
-​ 下面这些都是语句（代码）：
+ 下面这些都是语句（代码）：
 
-​ (1).if(){}
+ (1).if(){}
 
-​ (2).for(){}
+ (2).for(){}
 
-​ (3).switch(){
+ (3).switch(){
 
-​ case:xxx
+ case:xxx
 
-​ }
+ }
 
 ## 4 - 关于类内容的复习
 
@@ -193,11 +193,11 @@ class Student extends Person {
 
 总结:
 
-​ 1.类中的构造器不是必须写的,要对实例进行一些初始化的操作,如添加指定属性时才写
+ 1.类中的构造器不是必须写的,要对实例进行一些初始化的操作,如添加指定属性时才写
 
-​ 2.如果 A 类继承了 B 类,且 A 类中写了构造器,那么 A 类中的构造器中 super 是必须要调用的
+ 2.如果 A 类继承了 B 类,且 A 类中写了构造器,那么 A 类中的构造器中 super 是必须要调用的
 
-​ 3.类中定义的方法都放在了类的原型对象中的
+ 3.类中定义的方法都放在了类的原型对象中的
 
 ### 原生事件绑定方式
 
@@ -248,9 +248,9 @@ ReactDOM.render(<MyComponent />, document.getElementById("test"));
 
 执行了 ReactDOM.render(<MyComponent/>．．．．．)之后,发生了什么?
 
-​ 1.React 解析组件标签,找到 MyCompnent 标签
+ 1.React 解析组件标签,找到 MyCompnent 标签
 
-​ 2.发现组件是使用函数定义的,随后调用该函数,将返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中
+ 2.发现组件是使用函数定义的,随后调用该函数,将返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中
 
 ### 类式组件
 
@@ -271,17 +271,23 @@ ReactDOM.render(<MyComponent />, document.getElementById("test"));
 
 执行了 ReactDOM.render(<MyComponent/>．．．．．)之后,发生了什么?
 
-​ 1.React 解析组件标签,找到 MyCompnent 标签
+ 1.React 解析组件标签,找到 MyCompnent 标签
 
-​ 2.发现组件是使用类定义的，随后 new 出来该类的实例，并通过该实例调用到原型上的 render 方法。
+ 2.发现组件是使用类定义的，随后 new 出来该类的实例，并通过该实例调用到原型上的 render 方法。
 
-​ 3.将 render 返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中。
+ 3.将 render 返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中。
 
 ## 6 - 组件实例中的三大属性
 
-### state
+### 1 - state
 
 (1).通过 onXxx 属性指定事件处理函数(注意大小写)
 a.React 使用的自定义(合成)事件，而不是使用的原生 DOM 事件 --- 为了更好的兼容性
 b.React 中的事件是通过事件委托方式处理的(委托给组件最外层元素)
 (2).通过 event.target 得到发生事件的 DOM 元素对象
+
+### 2 - props
+
+
+
+### 3 - refs
