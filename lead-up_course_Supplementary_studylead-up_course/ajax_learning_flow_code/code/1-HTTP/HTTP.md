@@ -1,7 +1,7 @@
 # HTTP
 
 HTTP（hypertext transport protocol）协议『超文本传输协议』，协议详细规定了浏览器和万维网服务器之间互相通信的规则。
-约定, 规则
+约定, 规则.
 
 ## 请求报文
 
